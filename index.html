@@ -367,4 +367,9 @@ const introBox=document.querySelector('.content[aria-label="حالة تجهيز 
 const oldBanner=$('#products > div[style*="grid-template-columns:repeat(auto-fit"]');if(oldBanner)oldBanner.innerHTML='<strong>٨ منتجات مرشحة للاختبار</strong><span style="font-size:12px;color:var(--muted)">أسعار مقترحة بالجنيه المصري — راجع المورد قبل اعتمادها</span>';
 renderProducts();renderCart();
 </script>
+<script>
+/* إزالة رسالتي التنبيه المطلوبتين من واجهة المتجر */
+document.querySelector('.content[aria-label="حالة تجهيز المتجر"]')?.remove();
+document.querySelector('#products > div[style*="grid-template-columns:repeat(auto-fit"]')?.remove();
+</script>
 </body></html>

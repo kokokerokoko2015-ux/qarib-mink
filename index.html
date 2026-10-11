@@ -250,4 +250,54 @@ function makeOrder(name,phone,area,notes){const lines=products.filter(p=>state.c
 function showProductDetail(id){const p=products.find(item=>item.id===id);if(!p)return;$('#productDetailBody').innerHTML=`<div class="product-art ${p.art}" style="height:300px;border-radius:14px"><span class="emoji fallback visible" style="font-size:100px">${p.emoji}</span></div><div class="detail-copy"><div class="category-label">${p.categoryName}</div><h2>${p.name}</h2><p>${p.desc}</p><div class="detail-price" style="font-size:22px">${p.priceText}<small style="display:block;font-size:11px;line-height:1.8;color:var(--muted);font-weight:400">سعر مرجعي مرصود لدى منافس، وليس سعر بيع معتمدًا لدينا.</small></div><div class="detail-facts"><span>راجع رابط المنافس للتحقق من السعر الحالي</span><span>السعر قد يتغير حسب البائع والتوفر والشحن</span><span>سعر البيع والتوصيل لدينا يحتاج إلى تأكيد</span></div><div class="detail-actions">${p.url?`<button class="detail-ask" onclick="window.open('${p.url}','_blank','noopener')">افتح صفحة المنافس</button>`:''}<button class="detail-add" data-detail-add="${p.id}">أضف لقائمة الاهتمام</button></div></div>`;$('#productDetailModal').classList.add('open');document.body.style.overflow='hidden';}
 renderProducts();renderCart();
 </script>
+<style>
+/* النسخة النهائية: صور فعلية، بلا أسعار أو مقارنات خارجية */
+.hero-visual .showcase{font-size:0;background-size:cover;background-position:center;border:4px solid #ffffffd9}
+.hero-visual .showcase:first-child{background-image:url('https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=85')}
+.hero-visual .showcase:nth-child(2){background-image:url('https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=600&q=85')}
+.product-art{height:220px!important;background:#edf2f7!important}
+.product-art img.product-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}
+.product-art .emoji.fallback{display:none!important;position:absolute;inset:0;z-index:0;place-items:center;width:100%;height:100%;font-size:64px;background:linear-gradient(145deg,#edf4f8,#dce8ef)}
+.product-art .emoji.fallback.visible{display:grid!important}
+.product-art .tag,.product-art .heart{z-index:2}
+.product .price-line,.detail-price{display:none!important}
+.product .rating{display:none!important}
+.product .stock{color:#8a5b12!important}
+.product-info{display:flex;flex-direction:column;flex:1}
+.product-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:auto}
+.product-actions .add{min-height:44px}
+.detail-photo{width:100%;height:300px;object-fit:cover;border-radius:14px;background:var(--surface2)}
+@media(max-width:680px){.product-art{height:160px!important}.hero-visual .showcase{width:92px;height:105px}.detail-photo{height:230px}}
+</style>
+<script>
+/* إلغاء بيانات المقارنة القديمة واستعادة كتالوج البداية */
+const finalImages={
+  1:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=85',
+  2:'https://images.unsplash.com/photo-151170165300?auto=format&fit=crop&w=800&q=85',
+  3:'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=85',
+  4:'https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=85',
+  5:'https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=85',
+  6:'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=85',
+  7:'https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=85',
+  8:'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=85'
+};
+const starterProducts=[
+ {id:1,name:'منظّم كابلات وشاحن للمكتب',category:'mobile',categoryName:'إكسسوارات الموبايل',desc:'يساعد على ترتيب الكابلات ومساحة الشحن وتقليل الفوضى على المكتب.',emoji:'🔌',art:'blue',tag:'قيد الدراسة'},
+ {id:2,name:'حامل موبايل قابل للتعديل',category:'mobile',categoryName:'إكسسوارات الموبايل',desc:'للمكتب ومشاهدة الفيديوهات؛ نراجع الثبات والخامة قبل اعتماده.',emoji:'📱',art:'purple',tag:'قيد الدراسة'},
+ {id:3,name:'كابل شحن متين متعدد الاستخدام',category:'mobile',categoryName:'إكسسوارات الموبايل',desc:'سيتم تحديد النوع والطول والتوافق بعد مراجعة المورد.',emoji:'🔋',art:'green',tag:'قيد التحقق'},
+ {id:4,name:'منظّم أدراج متعدد الأقسام',category:'home',categoryName:'المنزل والتنظيم',desc:'لتقسيم الأدراج وترتيب الأغراض الصغيرة بطريقة عملية.',emoji:'🗂️',art:'orange',tag:'قيد الدراسة'},
+ {id:5,name:'فرش تنظيف للأماكن الضيقة',category:'home',categoryName:'المنزل والتنظيف',desc:'أداة مقترحة لتنظيف الزوايا والمساحات التي يصعب الوصول إليها.',emoji:'🧽',art:'green',tag:'قيد الدراسة'},
+ {id:6,name:'أكياس تخزين قابلة لإعادة الاستخدام',category:'home',categoryName:'المنزل والتنظيم',desc:'لترتيب الأغراض وتوفير المساحة؛ الخامة والمقاسات قيد المراجعة.',emoji:'🧺',art:'pink',tag:'قيد التحقق'},
+ {id:7,name:'مصباح LED صغير قابل للشحن',category:'daily',categoryName:'احتياجات يومية',desc:'نراجع جودة الإضاءة والبطارية وسلامة الشحن قبل اختيار المورد.',emoji:'💡',art:'orange',tag:'قيد التحقق'},
+ {id:8,name:'زجاجة مياه قابلة لإعادة الاستخدام',category:'daily',categoryName:'احتياجات يومية',desc:'اختيار يومي محتمل؛ نتحقق من السعة والخامة وسهولة التنظيف.',emoji:'🥤',art:'blue',tag:'قيد الدراسة'}
+];
+products.splice(0,products.length,...starterProducts.map(p=>({...p,image:finalImages[p.id]})));
+state.cart={};state.favorites=new Set();state.category='all';state.query='';state.sort='featured';state.favoritesOnly=false;
+function visibleProducts(){return products.filter(p=>(state.category==='all'||p.category===state.category)&&(!state.query||(`${p.name} ${p.categoryName} ${p.desc}`).toLowerCase().includes(state.query.toLowerCase()))&&(!state.favoritesOnly||state.favorites.has(p.id))).sort((a,b)=>state.sort==='name'?a.name.localeCompare(b.name,'ar'):a.id-b.id)}
+function renderProducts(){const list=visibleProducts();$('#resultCount').textContent=`${list.length} اختيارات`;$('#sectionTitle').textContent=state.favoritesOnly?'اختياراتك المفضلة':state.query?`نتائج البحث عن «${state.query}»`:'أفكار منتجات ندرس إضافتها';$$('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===state.category));$('#productGrid').innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-art ${p.art}"><img class="product-photo" src="${p.image}" alt="صورة توضيحية لـ ${p.name}" loading="lazy" decoding="async" width="800" height="600" onerror="this.style.display='none';this.nextElementSibling.classList.add('visible')"><span class="emoji fallback">${p.emoji}</span><span class="tag">${p.tag}</span><button class="heart ${state.favorites.has(p.id)?'saved':''}" data-fav="${p.id}" aria-label="${state.favorites.has(p.id)?'إزالة من المفضلة':'إضافة للمفضلة'}">${state.favorites.has(p.id)?'♥':'♡'}</button></div><div class="product-info"><div class="category-label">${p.categoryName}</div><h3>${p.name}</h3><p style="font-size:12px;line-height:1.9;color:var(--muted);margin:0 0 12px">${p.desc}</p><div class="stock">● فكرة قيد التحقق — ليست متاحة للبيع بعد</div><div class="product-actions"><button class="details-btn" data-details="${p.id}">اعرف التفاصيل</button><button class="add" data-add="${p.id}">＋ أضف لقائمة الاهتمام</button></div></div></article>`).join(''):'<div class="empty"><strong>لا توجد نتائج مطابقة</strong><br>جرّب كلمة بحث مختلفة أو أعد ضبط التصنيفات.</div>'}
+function renderCart(){const entries=products.filter(p=>state.cart[p.id]);$('#cartCount').textContent=cartQty();$('#cartTitleCount').textContent=`(${cartQty()})`;$('#cartTotal').textContent=entries.length?'السعر يُحدد بعد التحقق':'—';$('#checkoutBtn').disabled=!entries.length;$('#cartItems').innerHTML=entries.length?entries.map(p=>`<div class="cart-row"><div class="cart-thumb"><img src="${p.image}" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.classList.add('visible')"><span class="cart-emoji">${p.emoji}</span></div><div><strong>${p.name}</strong><small>السعر والتوافر قيد التحقق</small><div class="qty"><button data-qty="${p.id}" data-delta="-1" aria-label="تقليل الكمية">−</button><span>${state.cart[p.id]}</span><button data-qty="${p.id}" data-delta="1" aria-label="زيادة الكمية">+</button></div></div><div><button class="remove" data-remove="${p.id}">حذف</button></div></div>`).join(''):'<div class="empty">قائمة الاهتمام فارغة حاليًا.<br><br>أضف الأفكار التي تريد معرفة سعرها ومصدرها.</div>'}
+function makeOrder(name,phone,area,notes){const lines=products.filter(p=>state.cart[p.id]).map(p=>`• ${p.name} × ${state.cart[p.id]} — مطلوب تأكيد السعر والتوافر`);return `استفسار عن منتجات من قريب منك\nالاسم: ${name||'لم يُذكر'}\nالهاتف: ${phone||'لم يُذكر'}\nالمنطقة: ${area||'لم تُذكر'}\n\nالاختيارات:\n${lines.join('\n')}\n\nملاحظات: ${notes||'لا يوجد'}\n\nهذه قائمة اهتمام وليست طلب شراء مؤكدًا. يرجى تأكيد السعر والتوافر وتكلفة التوصيل قبل الاتفاق.`}
+function showProductDetail(id){const p=products.find(item=>item.id===id);if(!p)return;$('#productDetailBody').innerHTML=`<img class="detail-photo" src="${p.image}" alt="صورة توضيحية لـ ${p.name}" onerror="this.style.opacity='.25'"><div class="detail-copy"><div class="category-label">${p.categoryName}</div><h2>${p.name}</h2><p>${p.desc}</p><div class="detail-facts"><span>السعر يتأكد قبل أي اتفاق</span><span>التوافر وتكلفة التوصيل قيد التحقق</span><span>لن يتم تحصيل أي مبلغ من هذه الصفحة</span></div><div class="detail-actions"><button class="detail-add" data-detail-add="${p.id}">أضف لقائمة الاهتمام</button><button class="detail-ask" data-detail-ask="${p.id}">اسأل عن المنتج</button></div></div>`;$('#productDetailModal').classList.add('open');document.body.style.overflow='hidden'}
+renderProducts();renderCart();
+</script>
 </body></html>

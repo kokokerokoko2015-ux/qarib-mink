@@ -31,6 +31,14 @@
 .product-art.pink{background-image:url('https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=900&q=85')!important}
 @media(max-width:680px){.product-art{background-position:center!important}}
 </style>
+<style>
+/* صور المنتجات: صور فعلية مع بديل واضح عند تعذر التحميل */
+.product-art{background:#edf2f7!important;position:relative;isolation:isolate}
+.product-art img.product-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:0}
+.product-art .tag,.product-art .heart{z-index:2}
+.product-art .emoji.fallback{display:none!important;position:relative;z-index:1;font-size:64px;place-items:center;width:100%;height:100%;background:linear-gradient(145deg,#edf4f8,#dce8ef)}
+.product-art .emoji.fallback.visible{display:grid!important}
+</style>
 </head>
 <body>
 <div class="shell">
@@ -38,7 +46,7 @@
   <header class="header">
     <a class="brand" href="#home" aria-label="قريب منك الرئيسية" style="text-decoration:none;color:white"><span class="logo">ق</span><span><span class="brand-name">قريب منك</span><span class="brand-sub" style="display:block">اختيارات ذكية لحياتك اليومية</span></span></a>
     <form class="search" id="searchForm"><input id="searchInput" type="search" placeholder="بتدور على إيه؟ كابل شحن، أدوات تنظيف..." aria-label="ابحث عن منتج"><button type="submit">بحث　⌕</button></form>
-    <div class="head-actions"><button class="head-btn" id="favoritesBtn">♡ <span class="btn-label">المفضلة</span></button><button class="head-btn" id="cartBtn">🛒 <span class="btn-label">السلة</span><span class="count" id="cartCount">0</span></button></div>
+  <div class="head-actions"><button class="head-btn" id="favoritesBtn">♡ <span class="btn-label">المفضلة</span></button><button class="head-btn" id="cartBtn" aria-label="فتح قائمة الاهتمام">♡ <span class="btn-label">قائمة الاهتمام</span><span class="count" id="cartCount">0</span></button></div>
   </header>
   <nav class="nav" aria-label="تصنيفات المنتجات"><button class="active" data-category="all">كل المنتجات</button><button data-category="mobile">إكسسوارات الموبايل</button><button data-category="home">المنزل والتنظيف</button><button data-category="daily">احتياجات يومية</button><button id="howBtn">كيف تطلب؟</button></nav>
   <section class="hero" id="home">
@@ -108,5 +116,16 @@ Object.assign(products[6],{price:220,tag:'تقدير مبدئي',rating:'تقد�
 Object.assign(products[7],{price:180,tag:'تقدير مبدئي',rating:'تقدير للمقارنة',reviews:'يتطلب عرض مورد',image:'https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=900&q=85'});
 function renderProducts(){const list=visibleProducts();$('#resultCount').textContent=`${list.length} منتجات في الكتالوج`;$('#sectionTitle').textContent=state.favoritesOnly?'اختياراتك المفضلة':state.query?`نتائج البحث عن «${state.query}»`:'منتجات عملية وأسعار استرشادية';$$('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===state.category));$('#productGrid').innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-art ${p.art}" style="background-image:linear-gradient(0deg,rgba(12,28,45,.08),rgba(12,28,45,.02)),url('${p.image}')"><span class="tag">${p.tag}</span><button class="heart ${state.favorites.has(p.id)?'saved':''}" data-fav="${p.id}" aria-label="إضافة للمفضلة">${state.favorites.has(p.id)?'♥':'♡'}</button><span class="emoji">${p.emoji}</span></div><div class="product-info"><div class="category-label">${p.categoryName}</div><h3>${p.name}</h3><div class="rating">${p.rating} <span>${p.reviews}</span></div><p style="font-size:11px;line-height:1.7;color:var(--muted);min-height:35px;margin:0 0 10px">${p.desc}</p><div class="price-line"><span class="price">${money(p.price)}</span><span class="currency">سعر استرشادي</span></div><div class="stock" style="color:#9a5b0b">● السعر والتوافر النهائيان يحتاجان تأكيدًا</div><button class="add" data-add="${p.id}">＋ أضف لقائمة الاهتمام</button></div></article>`).join(''):'<div class="empty">لا توجد نتائج مطابقة. جرّب كلمة بحث مختلفة أو أعد ضبط التصنيفات.</div>'}
 renderProducts();renderCart();
+</script>
+<script>
+/* عرض متين للكتالوج: صور مستقلة وبديل عند فشل أي رابط */
+function renderProducts(){
+  const list=visibleProducts();
+  $('#resultCount').textContent=`${list.length} منتجات في الكتالوج`;
+  $('#sectionTitle').textContent=state.favoritesOnly?'اختياراتك المفضلة':state.query?`نتائج البحث عن «${state.query}»`:'منتجات عملية وأسعار استرشادية';
+  $$('[data-category]').forEach(b=>b.classList.toggle('active',b.dataset.category===state.category));
+  $('#productGrid').innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-art ${p.art}"><img class="product-photo" src="${p.image||''}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.classList.add('visible')"><span class="emoji fallback">${p.emoji}</span><span class="tag">${p.tag}</span><button class="heart ${state.favorites.has(p.id)?'saved':''}" data-fav="${p.id}" aria-label="${state.favorites.has(p.id)?'إزالة من المفضلة':'إضافة للمفضلة'}">${state.favorites.has(p.id)?'♥':'♡'}</button></div><div class="product-info"><div class="category-label">${p.categoryName}</div><h3>${p.name}</h3><div class="rating">${p.rating} <span>${p.reviews}</span></div><p style="font-size:11px;line-height:1.7;color:var(--muted);min-height:35px;margin:0 0 10px">${p.desc}</p><div class="price-line"><span class="price">${money(p.price)}</span><span class="currency">سعر استرشادي</span></div><div class="stock" style="color:#9a5b0b">● السعر والتوافر النهائيان يحتاجان تأكيدًا</div><button class="add" data-add="${p.id}">＋ أضف لقائمة الاهتمام</button></div></article>`).join(''):'<div class="empty">لا توجد نتائج مطابقة. جرّب كلمة بحث مختلفة أو أعد ضبط التصنيفات.</div>';
+}
+renderProducts();
 </script>
 </body></html>

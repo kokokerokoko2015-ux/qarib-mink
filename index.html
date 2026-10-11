@@ -715,12 +715,22 @@ function removeInterest(id){state.interests=state.interests.filter(function(x){r
 function setCategory(category){state.category=category;state.favoritesOnly=false;renderProducts();$('#products').scrollIntoView({behavior:'smooth',block:'start'})}
 function submitSearch(value){state.query=(value||'').trim();$('#searchInput').value=state.query;$('#mobileSearchInput').value=state.query;state.favoritesOnly=false;renderProducts();$('#products').scrollIntoView({behavior:'smooth',block:'start'})}
 function renderShareGallery(){
- var el=$('#shareGallery');if(!el)return;
+ var el=$('#shareGallery');
+ if(!el)return;
  el.innerHTML=products.slice(0,8).map(function(p){
-  var image=p.image||'';
-  var imageMarkup=image?'<img src="'+image+'" alt="صورة '+p.name+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\\'none\\';this.nextElementSibling.style.display=\\'grid\\'"><div class="share-image-fallback" style="display:none" aria-label="الصورة غير متاحة">📦<small>الصورة غير متاحة</small></div>':'<div class="share-image-fallback" aria-label="الصورة غير متاحة">📦<small>الصورة غير متاحة</small></div>';
+  var imageMarkup=p.image
+   ? '<img class="share-product-image" src="'+p.image+'" alt="صورة '+p.name+'" loading="lazy" referrerpolicy="no-referrer">'
+   : '<div class="share-image-fallback">📦<small>الصورة غير متاحة</small></div>';
   return '<article class="share-card">'+imageMarkup+'<div class="share-card-title">'+p.name+'</div><div class="share-card-actions"><button type="button" class="share-wa" data-share-wa="'+p.id+'">واتساب ↗</button><button type="button" data-copy-image="'+p.id+'">نسخ رابط الصورة</button><button type="button" data-share-fb="'+p.id+'">فيسبوك ↗</button><button type="button" data-native-share="'+p.id+'">مشاركة ↗</button></div></article>';
  }).join('');
+ $$('.share-product-image',el).forEach(function(img){
+  img.addEventListener('error',function(){
+   var fallback=document.createElement('div');
+   fallback.className='share-image-fallback';
+   fallback.innerHTML='📦<small>الصورة غير متاحة</small>';
+   img.replaceWith(fallback);
+  },{once:true});
+ });
 }
 function shareProductImage(id,platform){
  var p=getProduct(id);if(!p)return;

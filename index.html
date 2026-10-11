@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#172c27;--muted:#6b7b75;--paper:#f8f9f6;--white:#fff;--green:#145943;--green2:#1f7657;--mint:#e4f2e9;--lime:#d6ef8b;--line:#e4eae4;--gold:#d49b54;--shadow:0 18px 55px rgba(20,53,42,.09);--radius:22px}
+:root{--ink:#172b3b;--muted:#657786;--paper:#eaeded;--white:#fff;--green:#163b5c;--green2:#216b91;--mint:#e8f3f8;--lime:#ffb84d;--line:#d5d9d9;--gold:#f3a847;--shadow:0 3px 12px rgba(15,35,50,.12);--radius:12px}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:120px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans Arabic",Tahoma,Arial,sans-serif;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.wrap{width:min(1220px,calc(100% - 44px));margin-inline:auto}
 .topline{background:#102a24;color:#dce9df;font-size:11px;text-align:center;padding:9px 12px}.topline b{color:var(--lime);font-weight:700}
 header{position:sticky;top:0;z-index:30;background:#ffffffed;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.head{min-height:82px;display:grid;grid-template-columns:auto minmax(220px,1fr) auto;gap:30px;align-items:center}.brand{display:flex;align-items:center;gap:11px;min-width:max-content}.brand-icon{width:47px;height:47px;display:grid;place-items:center;background:var(--green);color:var(--lime);border-radius:16px;font-weight:700;font-size:24px;box-shadow:0 7px 18px #14594324}.brand-name{display:block;font-size:21px;font-weight:700;line-height:1.25;letter-spacing:-.4px}.brand-caption{display:block;color:var(--muted);font-size:10px;margin-top:5px}.search{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:13px;background:#f6f8f5;padding:5px 12px;min-width:0}.search:focus-within{border-color:#8bb6a0;background:#fff;box-shadow:0 0 0 3px #14594312}.search .glass{font-size:20px;color:#71857b}.search input{border:0;outline:0;background:transparent;min-width:0;width:100%;padding:10px 0;font-size:12px;color:var(--ink)}.search button{border:0;border-radius:9px;padding:10px 16px;background:var(--green);color:#fff;font-size:11px;font-weight:700}.head-actions{display:flex;align-items:center;gap:8px}.head-action{display:flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-size:11px;font-weight:700;white-space:nowrap}.head-action:hover{border-color:#9bbbab;color:var(--green)}.count{display:inline-grid;place-items:center;min-width:21px;height:21px;padding:0 5px;border-radius:20px;background:var(--lime);color:var(--green);font-size:10px}.mobile-search{display:none}.nav{border-top:1px solid #f0f3ef}.nav-inner{display:flex;align-items:center;gap:5px;min-height:43px;overflow-x:auto;scrollbar-width:none}.nav-inner::-webkit-scrollbar{display:none}.nav-link{border:0;background:transparent;color:#63756c;border-radius:9px;padding:10px 14px;font-size:11px;white-space:nowrap}.nav-link:hover,.nav-link.active{background:var(--mint);color:var(--green);font-weight:700}.nav-push{flex:1}.nav-caption{font-size:10px;color:#89978e;white-space:nowrap}
@@ -34,10 +34,125 @@ footer{background:#102f25;color:#fff;padding:38px 0 20px}.footer-grid{display:gr
 @media(max-width:720px){.wrap{width:calc(100% - 28px)}.topline{font-size:9px}.head{min-height:68px;grid-template-columns:1fr auto;gap:10px}.brand-icon{width:40px;height:40px;border-radius:13px}.brand-name{font-size:18px}.brand-caption{font-size:9px}.head>.search{display:none}.head-actions{gap:5px}.head-action{padding:9px;border-radius:10px}.head-action .action-icon{font-size:16px}.mobile-search{display:block;padding-bottom:10px}.mobile-search .search{padding:3px 10px}.mobile-search input{padding:8px 0}.mobile-search .search button{padding:9px 11px}.nav-inner{min-height:40px}.nav-link{padding:9px 11px;font-size:10px}.hero{margin-top:14px;grid-template-columns:1fr;border-radius:20px}.hero-copy{padding:28px 23px 23px}.hero h1{font-size:35px;letter-spacing:-.7px;margin:15px 0 10px}.hero-copy>p{font-size:11px;line-height:2;margin-bottom:17px}.hero-buttons .primary,.hero-buttons .secondary{padding:11px 13px;font-size:10px}.hero-note{font-size:9px;margin-top:12px}.hero-visual{min-height:255px}.hero-visual:before{width:290px;height:290px}.hero-visual:after{width:215px;height:215px}.hero-glow{width:165px;height:165px}.showcase.big{width:125px;height:148px;border-width:5px;border-radius:20px;font-size:64px}.showcase.side{width:86px;height:100px;border-width:5px;border-radius:16px;font-size:40px;transform:translate(76px,48px) rotate(9deg)}.showcase.small{width:68px;height:75px;border-width:4px;font-size:30px;transform:translate(-85px,-63px) rotate(8deg)}.float-note{font-size:9px;padding:8px 10px}.float-note span:first-child{width:23px;height:23px;font-size:13px}.float-note.top{top:9%;right:5%}.float-note.bottom{bottom:8%;left:4%}.benefits{grid-template-columns:1fr;gap:8px;margin:11px 0 40px}.benefit{padding:11px 13px}.benefit-icon{width:36px;height:36px;flex-basis:36px;font-size:16px}.benefit strong{font-size:11px}.benefit small{font-size:9px}.section{padding-bottom:37px}.section-head{align-items:flex-start;margin-bottom:16px;gap:8px}.section-head h2{font-size:23px}.section-head p{font-size:10px}.text-link{font-size:10px;margin-top:9px}.categories{grid-template-columns:1fr;gap:9px}.category-card{min-height:105px;padding:15px 17px}.category-emoji{font-size:23px}.category-card strong{font-size:13px}.category-card small{font-size:9px}.catalog-tools{align-items:flex-start}.chips{gap:6px}.chip{padding:8px 11px;font-size:9px}.catalog-meta{width:100%;justify-content:space-between}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.product-art{height:155px}.product-art:before{width:115px;height:115px;left:calc(50% - 57px);top:20px}.art-object{width:95px;height:95px;font-size:46px;border-radius:20px}.product-badge{top:8px;right:8px;font-size:8px;padding:4px 6px}.favorite-btn{top:8px;left:8px;width:29px;height:29px;font-size:17px}.product-info{padding:11px}.product-category{font-size:8px}.product-info h3{font-size:11px;min-height:40px;line-height:1.7}.product-desc{font-size:9px;line-height:1.8;min-height:66px}.price-line{align-items:flex-start;flex-direction:column;gap:4px;padding:9px 0 7px}.price-line strong{font-size:14px}.product-status{font-size:8px;min-height:44px}.product-buttons button{font-size:9px;padding:9px 5px}.promo-row{grid-template-columns:1fr;gap:9px;margin:0 0 38px}.promo{min-height:180px;padding:22px}.promo h3{font-size:18px;max-width:290px}.promo p{font-size:10px;max-width:290px}.promo-art{font-size:55px}.trust{padding:22px 15px;margin-bottom:38px}.trust-head h2{font-size:20px}.trust-head p{font-size:10px}.trust-grid{grid-template-columns:1fr;gap:15px}.trust-item{padding:4px 10px}.trust-item h3{font-size:11px}.trust-item p{font-size:9px}.research-links a{font-size:9px}.footer-grid{grid-template-columns:1fr;gap:22px}.footer-about{font-size:10px}.footer-grid h3{font-size:11px}.footer-links a,.footer-links span{font-size:10px}.footer-bottom{flex-direction:column;gap:6px;font-size:9px}.detail-layout{grid-template-columns:1fr;gap:14px;padding:15px}.detail-art{min-height:190px}.detail-copy h3{font-size:18px}.detail-copy p{font-size:10px}.modal{border-radius:16px}.interest-content{padding:15px}.interest-footer{flex-direction:column}}
 @media(max-width:380px){.product-grid{gap:8px}.product-info{padding:9px}.product-art{height:135px}.product-desc{min-height:76px}.hero h1{font-size:31px}.head-action{padding:8px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Marketplace-style refresh: familiar retail hierarchy, original Qarib Mink branding */
+body{background:#eaeded;color:#172b3b}
+.topline{background:#131f2b;color:#eaf0f5;padding:8px 12px;font-size:11px}
+.topline b{color:#ffb84d}
+header{background:#172b3b;color:#fff;border-bottom:0}
+.head{min-height:78px;gap:22px}
+.brand-name{color:#fff}.brand-caption{color:#c8d3dc}
+.brand-icon{background:#ffb84d;color:#172b3b;border-radius:7px;box-shadow:none}
+.search{background:#fff;border:2px solid #f3a847;border-radius:7px;gap:8px;padding:3px 7px}
+.search:focus-within{border-color:#ffb84d;box-shadow:0 0 0 2px #f3a84735}
+.search input{color:#172b3b;font-size:13px;padding:10px 0}
+.search button{background:#f3a847;color:#172b3b;border-radius:4px;font-size:12px;padding:10px 18px}
+.search .glass{color:#536675}
+.head-action{background:transparent;color:#fff;border-color:#52616e;border-radius:5px;padding:9px 10px}
+.head-action:hover,.head-action.active{border-color:#ffb84d;color:#ffcf7c;background:#233b50}
+.count{background:#ffb84d;color:#172b3b}
+.nav{background:#24394b;border-top:1px solid #405263}
+.nav-inner{min-height:40px;gap:3px}
+.nav-link{color:#f0f4f7;border-radius:4px;padding:10px 13px}
+.nav-link:hover,.nav-link.active{background:#385267;color:#ffcf7c}
+.nav-caption{color:#c6d0d8}
+.hero{margin-top:18px;border-radius:7px;min-height:350px;background:#d8e8f1;grid-template-columns:1.08fr .92fr}
+.hero-copy{padding:clamp(28px,4vw,52px)}
+.eyebrow{background:#fff;color:#1b4d6a;border-color:#d9e6ed;border-radius:5px}
+.hero h1{font-size:clamp(32px,3.7vw,48px);letter-spacing:-.7px}
+.hero h1 em{color:#176b91}
+.hero-copy>p{color:#425a69}
+.primary{background:#f3a847;border-color:#e69a32;color:#172b3b;border-radius:6px}
+.primary:hover{background:#ffc15d;color:#172b3b}
+.secondary{background:#fff;border-color:#9fb5c3;color:#164967;border-radius:6px}
+.hero-visual{background:linear-gradient(135deg,#d9eaf3,#f4f7f8)}
+.showcase{box-shadow:0 12px 24px #1c334022;border-radius:15px}
+.float-note{border-radius:7px;box-shadow:0 5px 16px #1c334018}
+.benefits{gap:10px;margin:12px 0 35px}
+.benefit{border-radius:7px;padding:13px 15px}
+.benefit-icon{border-radius:8px;background:#e7f1f6}
+.section{padding-bottom:38px}
+.section-head{margin-bottom:16px}
+.section-head h2{font-size:clamp(22px,2.5vw,29px)}
+.kicker{color:#176b91}
+.text-link{color:#176b91}
+.categories{gap:10px}
+.category-card{border-radius:7px;min-height:130px;padding:16px 18px}
+.category-card:hover{box-shadow:0 3px 12px #172b3b12}
+.category-card:after{opacity:.55}
+.catalog-tools{background:#fff;border:1px solid #d5d9d9;border-radius:7px;padding:11px 12px;margin-bottom:13px}
+.chip{border-radius:5px;padding:8px 11px}
+.chip.active{background:#24394b;border-color:#24394b}
+.sort{border-radius:5px}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.product-card{border-radius:7px;border-color:#d5d9d9;box-shadow:none}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px #172b3b18;border-color:#aab8c1}
+.product-art{height:190px}
+.product-art:before{width:140px;height:140px;left:calc(50% - 70px);top:24px}
+.product-badge{border-radius:4px;color:#172b3b;background:#fff;border-color:#e0e5e8}
+.favorite-btn{border-radius:6px}
+.product-info{padding:13px}
+.product-info h3{font-size:13px;min-height:43px;color:#176b91}
+.product-info h3:hover{color:#c45500}
+.product-desc{font-size:10px;min-height:54px}
+.price-line strong{color:#172b3b}
+.product-status{color:#687986}
+.status-dot{background:#f3a847}
+.product-buttons{gap:7px}
+.product-buttons button{border-radius:6px}
+.details-btn{border-color:#aebbc4;color:#176b91}
+.interest-btn{background:#ffd36a;border-color:#e7b44d;color:#172b3b}
+.interest-btn:hover{background:#ffc64a}
+.promo-row{gap:12px;margin:3px 0 40px}
+.promo{border-radius:7px;min-height:180px}
+.promo:nth-child(2){background:#e8edf0}
+.promo h3{font-size:19px}
+.promo a{color:#176b91}
+.trust{border-radius:7px;padding:25px;margin-bottom:38px}
+.trust-head h2{font-size:22px}
+.research-links a{border-radius:5px;color:#176b91}
+footer{background:#172b3b}
+.footer-brand .brand-icon{background:#ffb84d;color:#172b3b}
+.toast{border-radius:7px;background:#172b3b}
+.modal{border-radius:10px}
+.modal-top{background:#f5f7f8}
+.close-btn{border-radius:6px}
+.interest-row{border-radius:7px}
+.primary,.secondary,.head-action,.nav-link,.chip,.category-card,.product-card,.interest-btn,.details-btn{transition:background .18s,border-color .18s,transform .18s,box-shadow .18s}
+@media(max-width:1000px){.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.head{gap:12px}}
+@media(max-width:720px){
+ .head{grid-template-columns:1fr auto;min-height:66px}
+ .brand-name{color:#fff}.brand-caption{color:#c8d3dc}
+ .head-action{border-color:#52616e}
+ .search{border-width:2px}
+ .hero{margin-top:12px;border-radius:7px}
+ .hero-copy{padding:25px 20px 20px}
+ .hero h1{font-size:33px}
+ .hero-visual{min-height:235px}
+ .benefit{border-radius:6px}
+ .categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .category-card{min-height:118px;padding:12px 10px}
+ .category-card strong{font-size:11px;line-height:1.6}
+ .category-card small{font-size:8px;line-height:1.6}
+ .category-emoji{font-size:21px}
+ .catalog-tools{padding:9px;border-radius:6px}
+ .chips{gap:5px}
+ .chip{padding:8px 9px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .product-art{height:145px}
+ .product-info h3{color:#176b91}
+ .product-desc{min-height:67px}
+ .product-buttons button{font-size:9px}
+ .promo{border-radius:7px}
+ .trust{border-radius:7px}
+ .footer-grid{gap:20px}
+}
+@media(max-width:380px){.categories{grid-template-columns:1fr}.category-card{min-height:90px}.product-art{height:130px}}
+
 </style>
 </head>
 <body>
-<div class="topline">اختيارات عملية للحياة اليومية <b>·</b> أسعار استرشادية واضحة قبل ما تقرر</div>
+<div class="topline">اختيارات عملية للحياة اليومية <b>·</b> قارن الاختيارات واسأل قبل ما تقرر</div>
 <header>
   <div class="wrap head">
     <a class="brand" href="#home" aria-label="قريب منك - الرئيسية"><span class="brand-icon">ق</span><span><span class="brand-name">قريب منك</span><span class="brand-caption">اختيارات عملية لحياتك اليومية</span></span></a>
@@ -49,12 +164,12 @@ footer{background:#102f25;color:#fff;padding:38px 0 20px}.footer-grid{display:gr
 </header>
 <main class="wrap" id="home">
   <section class="hero" aria-labelledby="heroTitle">
-    <div class="hero-copy"><span class="eyebrow"><i></i> اختيارات يومية بعناية</span><h1 id="heroTitle">حاجات صغيرة،<br><em>تفرق في يومك.</em></h1><p>بنستكشف منتجات عملية للموبايل والبيت، ونقارن أسعار السوق قبل ما نرشّحها. شوف الاختيارات، كوّن قائمتك، واسأل عن السعر والتوفر قبل أي اتفاق.</p><div class="hero-buttons"><a class="primary" href="#products">اكتشف المنتجات <span aria-hidden="true">←</span></a><button class="secondary" type="button" id="heroInterest">شوف قائمة اهتمامك</button></div><div class="hero-note">الأسعار المعروضة مستهدفة وليست عرض سعر نهائيًا أو تأكيدًا للتوفر.</div></div>
+    <div class="hero-copy"><span class="eyebrow"><i></i> تجربة تسوّق أبسط وأوضح</span><h1 id="heroTitle">حاجات صغيرة،<br><em>تفرق في يومك.</em></h1><p>بنستكشف منتجات عملية للموبايل والبيت، ونقارن أسعار السوق قبل ما نرشّحها. شوف الاختيارات، كوّن قائمتك، واسأل عن السعر والتوفر قبل أي اتفاق.</p><div class="hero-buttons"><a class="primary" href="#products">اكتشف المنتجات <span aria-hidden="true">←</span></a><button class="secondary" type="button" id="heroInterest">شوف قائمة اهتمامك</button></div><div class="hero-note">الأسعار المعروضة مستهدفة وليست عرض سعر نهائيًا أو تأكيدًا للتوفر.</div></div>
     <div class="hero-visual" aria-hidden="true"><div class="hero-glow"></div><div class="showcase big">📱</div><div class="showcase side">🎒</div><div class="showcase small">🔌</div><div class="float-note top"><span>✦</span> اختيارات عملية</div><div class="float-note bottom"><span>✓</span> قارن قبل ما تقرر</div></div>
   </section>
   <section class="benefits" aria-label="مميزات طريقة العرض"><div class="benefit"><span class="benefit-icon">⌕</span><div><strong>اختيارات سهلة</strong><small>تصفّح وابحث حسب احتياجك</small></div></div><div class="benefit"><span class="benefit-icon">◷</span><div><strong>معلومات واضحة</strong><small>نعرض السعر المستهدف بوضوح</small></div></div><div class="benefit"><span class="benefit-icon">↗</span><div><strong>استفسار مباشر</strong><small>اسأل عن السعر والتوفر قبل الاتفاق</small></div></div></section>
   <section class="section" id="categories"><div class="section-head"><div><div class="kicker">اختار اللي يناسبك</div><h2>تسوّق حسب الفئة</h2><p>ابدأ من احتياجك، وهتلاقي الاختيارات المتعلقة بيه.</p></div><a class="text-link" href="#products">كل المنتجات ←</a></div><div class="categories"><button class="category-card" type="button" data-category="mobile"><span class="category-top"><span class="category-emoji">📱</span><span class="category-arrow">↙</span></span><span><strong>إكسسوارات الموبايل</strong><small>شحن، تثبيت وتنظيم</small></span></button><button class="category-card" type="button" data-category="home"><span class="category-top"><span class="category-emoji">🏡</span><span class="category-arrow">↙</span></span><span><strong>المنزل والتنظيم</strong><small>تفاصيل تساعدك ترتّب مساحتك</small></span></button><button class="category-card" type="button" data-category="daily"><span class="category-top"><span class="category-emoji">✨</span><span class="category-arrow">↙</span></span><span><strong>احتياجات يومية</strong><small>حلول بسيطة واستخدامات متنوعة</small></span></button></div></section>
-  <section class="section catalog" id="products"><div class="section-head"><div><div class="kicker">الاختيارات الحالية</div><h2>منتجات تستحق المقارنة</h2><p>دي قائمة مبدئية للدراسة. السعر النهائي والتوفر بيتأكدوا قبل الاتفاق.</p></div><a class="text-link" href="#howItWorks">إزاي بنختار؟ ←</a></div>
+  <section class="section catalog" id="products"><div class="section-head"><div><div class="kicker">منتجات مختارة</div><h2>تصفّح المنتجات</h2><p>دي قائمة مبدئية للدراسة. السعر النهائي والتوفر بيتأكدوا قبل الاتفاق.</p></div><a class="text-link" href="#howItWorks">إزاي بنختار؟ ←</a></div>
     <div class="catalog-tools"><div class="chips"><button class="chip active" data-filter="all" type="button">الكل</button><button class="chip" data-filter="mobile" type="button">إكسسوارات الموبايل</button><button class="chip" data-filter="home" type="button">المنزل والتنظيم</button><button class="chip" data-filter="daily" type="button">احتياجات يومية</button><button class="chip" id="favoritesFilter" type="button">♡ المفضلة فقط</button></div><div class="catalog-meta"><span id="resultsCount" aria-live="polite">8 اختيارات</span><label for="sortSelect">ترتيب:</label><select class="sort" id="sortSelect"><option value="featured">الاختيارات الحالية</option><option value="name">الاسم أبجديًا</option></select></div></div>
     <div class="product-grid" id="productGrid"></div>
   </section>

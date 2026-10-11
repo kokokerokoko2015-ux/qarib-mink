@@ -149,6 +149,164 @@ footer{background:#172b3b}
 }
 @media(max-width:380px){.categories{grid-template-columns:1fr}.category-card{min-height:90px}.product-art{height:130px}}
 
+
+/* Marketplace-inspired refresh: Amazon Egypt information hierarchy, original Qarib Mink identity */
+:root{--ink:#17212b;--muted:#5d6b78;--paper:#eaeded;--white:#fff;--green:#131f2a;--green2:#216b91;--mint:#eaf3f8;--lime:#ffb84d;--line:#d5d9d9;--gold:#febd69;--shadow:0 2px 8px rgba(15,25,35,.13);--radius:5px}
+body{background:#eaeded;color:#17212b}
+.wrap{width:min(1500px,calc(100% - 32px))}
+.topline{background:#131f2a;color:#fff;font-size:11px;padding:8px 12px}
+.topline b{color:#ffbd69}
+header{background:#131f2a;color:#fff;border:0;backdrop-filter:none}
+.head{min-height:74px;grid-template-columns:auto minmax(220px,1fr) auto;gap:22px}
+.brand{padding:8px 0;color:#fff}
+.brand-icon{background:#fff;color:#131f2a;border-radius:3px;box-shadow:none;width:42px;height:42px}
+.brand-name{color:#fff;font-size:22px}
+.brand-caption{color:#c7d1da}
+.search{background:#fff;border:0;border-radius:5px;padding:4px;gap:8px}
+.search:focus-within{border:0;box-shadow:0 0 0 3px #febd6944}
+.search .glass{padding-inline:8px;color:#64717b}
+.search input{font-size:13px;color:#17212b;padding:11px 0}
+.search button{background:#febd69;color:#17212b;border-radius:3px;padding:12px 20px;font-size:12px}
+.search button:hover{background:#f3a847}
+.head-actions{gap:7px}
+.head-action{color:#fff;background:transparent;border:1px solid transparent;border-radius:3px;padding:8px 9px;font-size:11px}
+.head-action:hover,.head-action.active{color:#fff;border-color:#fff;background:#ffffff0c}
+.count{background:#febd69;color:#17212b}
+.nav{border-top:1px solid #34424e;background:#232f3e}
+.nav-inner{min-height:40px;gap:2px}
+.nav-link{color:#fff;border-radius:3px;padding:10px 13px;font-size:11px}
+.nav-link:hover,.nav-link.active{background:#37475a;color:#fff;outline:1px solid #718096}
+.nav-caption{color:#d7dce1}
+.hero{margin-top:16px;border-radius:3px;min-height:340px;background:#d9e8ef;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-copy{padding:clamp(26px,4vw,56px)}
+.eyebrow{border-radius:3px;background:#fff;color:#24506a;border-color:#d8e4ea}
+.hero h1{font-size:clamp(31px,3.4vw,49px);letter-spacing:-.6px}
+.hero h1 em{color:#176b91}
+.hero-copy>p{color:#415563;font-size:13px}
+.primary{background:#ffd814;border-color:#fcd200;color:#17212b;border-radius:4px}
+.primary:hover{background:#f7ca00;color:#17212b}
+.secondary{background:#fff;border-color:#adb9c1;color:#17212b;border-radius:4px}
+.hero-visual{background:linear-gradient(120deg,#d8e9f2,#f6f8f9)}
+.showcase{overflow:hidden;border-radius:8px;box-shadow:0 10px 28px #1b2b3a30;background:#fff;transform:none}
+.showcase img{width:100%;height:100%;object-fit:cover;display:block}
+.showcase.big{width:56%;height:74%;left:20%;top:13%;transform:rotate(-2deg)}
+.showcase.side{width:32%;height:45%;right:4%;top:15%;transform:rotate(3deg)}
+.showcase.small{width:29%;height:39%;left:5%;bottom:8%;transform:rotate(4deg)}
+.float-note{border-radius:4px;box-shadow:0 3px 12px #1c334022}
+.benefits{gap:0;margin:12px 0 25px;background:#fff;border:1px solid #d5d9d9;border-radius:3px;padding:4px}
+.benefit{border-radius:0;padding:13px 17px}
+.benefit+.benefit{border-right:1px solid #e2e5e7}
+.benefit-icon{border-radius:3px;background:#edf3f6}
+.section{padding-bottom:30px}
+.section-head{margin-bottom:14px}
+.section-head h2{font-size:clamp(21px,2.2vw,28px);letter-spacing:-.3px}
+.kicker{color:#176b91}
+.text-link{color:#007185}
+.categories{gap:12px}
+.category-card{background:#fff;border:1px solid #d5d9d9;border-radius:3px;min-height:135px}
+.category-card:hover{box-shadow:0 3px 12px #172b3b12;border-color:#9daab4}
+.category-card:after{opacity:.35}
+.catalog-tools{background:#fff;border:1px solid #d5d9d9;border-radius:3px;padding:11px 12px;margin-bottom:13px}
+.chip{border-radius:3px}
+.chip.active{background:#232f3e;border-color:#232f3e}
+.sort{border-radius:3px}
+.product-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.product-card{border-radius:3px;border-color:#d5d9d9;box-shadow:none;background:#fff;overflow:hidden}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 4px 14px #172b3b18;border-color:#aab8c1}
+.product-art{height:220px;background:#fff}
+.product-art:before{display:none}
+.product-photo{object-fit:contain;padding:8px;background:#fff}
+.product-badge{border-radius:3px;color:#17212b;background:#f4f6f7;border-color:#e0e5e8}
+.favorite-btn{border-radius:50%;box-shadow:0 1px 5px #0001}
+.product-info{padding:14px}
+.product-info h3{font-size:13px;min-height:43px;color:#007185}
+.product-info h3:hover{color:#c45500;text-decoration:underline}
+.product-desc{font-size:10px;min-height:54px}
+.price-line{align-items:flex-start}
+.price-line strong{color:#b12704;font-size:17px}
+.price-label{color:#56616a}
+.product-status{color:#687986}
+.status-dot{background:#f3a847}
+.product-buttons button{border-radius:4px}
+.details-btn{border-color:#aebbc4;color:#17212b;background:#f5f6f7}
+.interest-btn{background:#ffd814;border-color:#fcd200;color:#17212b}
+.interest-btn:hover{background:#f7ca00}
+.promo-row{gap:12px;margin:3px 0 30px}
+.promo{border-radius:3px;min-height:180px}
+.promo:nth-child(2){background:#e8edf0}
+.promo h3{font-size:19px}
+.promo a{color:#007185}
+.trust{border-radius:3px;padding:25px;margin-bottom:30px}
+.trust-head h2{font-size:22px}
+.research-links a{border-radius:3px;color:#007185}
+footer{background:#232f3e}
+.footer-brand .brand-icon{background:#febd69;color:#17212b}
+.toast{border-radius:4px;background:#232f3e}
+.modal{border-radius:5px}
+.modal-top{background:#f5f7f8}
+.close-btn{border-radius:4px}
+.interest-row{border-radius:4px}
+.primary,.secondary,.head-action,.nav-link,.chip,.category-card,.product-card,.interest-btn,.details-btn{transition:background .18s,border-color .18s,transform .18s,box-shadow .18s}
+.market-deals{background:#fff;padding:20px 20px 16px;margin:12px 0 30px;border:1px solid #d5d9d9;border-radius:3px}
+.market-deals-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:16px}
+.market-deals-head h2{font-size:22px;line-height:1.4;margin:4px 0 5px}
+.market-deals-head p{font-size:11px;color:#596773;margin:0;line-height:1.7}
+.market-deals-head>a{font-size:11px;font-weight:700;color:#007185;white-space:nowrap}
+.deals-kicker{font-size:10px;font-weight:700;color:#176b91}
+.deal-products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.deal-product{display:grid;grid-template-columns:42% 1fr;gap:12px;align-items:center;border:1px solid #e5e8ea;border-radius:3px;padding:10px;min-width:0;color:#17212b}
+.deal-product:hover{border-color:#9aa9b3;box-shadow:0 2px 8px #0000000d}
+.deal-photo{height:128px;background:#f7f8f8;display:grid;place-items:center;overflow:hidden}
+.deal-photo img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.deal-copy{display:flex;flex-direction:column;gap:5px;min-width:0}
+.deal-copy>small{font-size:9px;color:#64717b}
+.deal-copy strong{font-size:11px;line-height:1.7}
+.deal-copy>b{font-size:16px;color:#b12704;white-space:nowrap}
+.deal-copy>b small{font-size:9px}
+.deal-copy em{font-size:9px;color:#687681;font-style:normal}
+@media(max-width:1100px){.deal-products{grid-template-columns:repeat(2,minmax(0,1fr))}.deal-product{grid-template-columns:38% 1fr}.head{gap:10px}.wrap{width:min(1500px,calc(100% - 24px))}}
+@media(max-width:720px){
+ .head{grid-template-columns:1fr auto;min-height:66px}
+ .brand-name{color:#fff}.brand-caption{color:#c8d3dc}
+ .head-action{border-color:#52616e}
+ .search{border-width:0}
+ .hero{margin-top:12px;border-radius:3px;grid-template-columns:1fr}
+ .hero-copy{padding:25px 20px 20px}
+ .hero h1{font-size:33px}
+ .hero-visual{min-height:235px}
+ .benefits{padding:2px;margin-bottom:22px}
+ .benefit{border-radius:0;padding:10px 7px}
+ .benefit-icon{display:none}
+ .benefit strong{font-size:10px}
+ .benefit small{font-size:8px}
+ .categories{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .category-card{min-height:118px;padding:12px 10px}
+ .category-card strong{font-size:11px;line-height:1.6}
+ .category-card small{font-size:8px;line-height:1.6}
+ .category-emoji{font-size:21px}
+ .catalog-tools{padding:9px;border-radius:3px}
+ .chips{gap:5px}
+ .chip{padding:8px 9px}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .product-art{height:155px}
+ .product-photo{padding:4px}
+ .product-info h3{color:#007185}
+ .product-desc{min-height:67px}
+ .product-buttons button{font-size:9px}
+ .promo{border-radius:3px}
+ .trust{border-radius:3px}
+ .footer-grid{gap:20px}
+ .market-deals{padding:13px 10px;margin-top:8px}
+ .market-deals-head{align-items:flex-start;flex-direction:column;gap:8px}
+ .market-deals-head h2{font-size:19px}
+ .deal-products{grid-template-columns:1fr 1fr;gap:7px}
+ .deal-product{grid-template-columns:1fr;gap:6px;padding:7px}
+ .deal-photo{height:110px}
+ .deal-copy strong{font-size:10px;min-height:34px}
+ .deal-copy>b{font-size:14px}
+}
+@media(max-width:380px){.categories{grid-template-columns:1fr}.category-card{min-height:90px}.product-art{height:130px}.deal-products{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -165,9 +323,18 @@ footer{background:#172b3b}
 <main class="wrap" id="home">
   <section class="hero" aria-labelledby="heroTitle">
     <div class="hero-copy"><span class="eyebrow"><i></i> تجربة تسوّق أبسط وأوضح</span><h1 id="heroTitle">حاجات صغيرة،<br><em>تفرق في يومك.</em></h1><p>بنستكشف منتجات عملية للموبايل والبيت، ونقارن أسعار السوق قبل ما نرشّحها. شوف الاختيارات، كوّن قائمتك، واسأل عن السعر والتوفر قبل أي اتفاق.</p><div class="hero-buttons"><a class="primary" href="#products">اكتشف المنتجات <span aria-hidden="true">←</span></a><button class="secondary" type="button" id="heroInterest">شوف قائمة اهتمامك</button></div><div class="hero-note">الأسعار المعروضة مستهدفة وليست عرض سعر نهائيًا أو تأكيدًا للتوفر.</div></div>
-    <div class="hero-visual" aria-hidden="true"><div class="hero-glow"></div><div class="showcase big">📱</div><div class="showcase side">🎒</div><div class="showcase small">🔌</div><div class="float-note top"><span>✦</span> اختيارات عملية</div><div class="float-note bottom"><span>✓</span> قارن قبل ما تقرر</div></div>
+    <div class="hero-visual" aria-label="صور لمنتجات عملية"><div class="hero-glow"></div><div class="showcase big"><img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=900&q=90" alt="إكسسوارات الموبايل" loading="eager"></div><div class="showcase side"><img src="https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=600&q=85" alt="حافظة تنظيم عملية" loading="lazy"></div><div class="showcase small"><img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&w=500&q=85" alt="حامل موبايل" loading="lazy"></div><div class="float-note top"><span>✦</span> اختيارات عملية</div><div class="float-note bottom"><span>✓</span> قارن قبل ما تقرر</div></div>
   </section>
   <section class="benefits" aria-label="مميزات طريقة العرض"><div class="benefit"><span class="benefit-icon">⌕</span><div><strong>اختيارات سهلة</strong><small>تصفّح وابحث حسب احتياجك</small></div></div><div class="benefit"><span class="benefit-icon">◷</span><div><strong>معلومات واضحة</strong><small>نعرض السعر المستهدف بوضوح</small></div></div><div class="benefit"><span class="benefit-icon">↗</span><div><strong>استفسار مباشر</strong><small>اسأل عن السعر والتوفر قبل الاتفاق</small></div></div></section>
+  <section class="market-deals" aria-labelledby="marketDealsTitle">
+    <div class="market-deals-head"><div><span class="deals-kicker">اختيارات تستحق المقارنة</span><h2 id="marketDealsTitle">منتجات عملية وأسعارها واضحة</h2><p>نطاقات سعرية مستهدفة للمقارنة، وليست عروض خصم أو أسعارًا مؤكدة.</p></div><a href="#products">تصفّح كل المنتجات ←</a></div>
+    <div class="deal-products">
+      <a class="deal-product" href="#products"><span class="deal-photo"><img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=500&q=85" alt="كابل وإكسسوارات شحن" loading="lazy"></span><span class="deal-copy"><small>إكسسوارات الموبايل</small><strong>كابل شحن USB-C مضفّر</strong><b>79–129 <small>ج.م</small></b><em>سعر بيع مستهدف</em></span></a>
+      <a class="deal-product" href="#products"><span class="deal-photo"><img src="https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?auto=format&fit=crop&w=500&q=85" alt="حامل موبايل" loading="lazy"></span><span class="deal-copy"><small>للسيارة والمكتب</small><strong>حامل موبايل</strong><b>129–249 <small>ج.م</small></b><em>سعر بيع مستهدف</em></span></a>
+      <a class="deal-product" href="#products"><span class="deal-photo"><img src="https://images.unsplash.com/photo-1622560480654-d96214fdc887?auto=format&fit=crop&w=500&q=85" alt="حافظة تنظيم" loading="lazy"></span><span class="deal-copy"><small>تنظيم أثناء السفر</small><strong>حافظة الشواحن والكابلات</strong><b>175–249 <small>ج.م</small></b><em>سعر بيع مستهدف</em></span></a>
+      <a class="deal-product" href="#products"><span class="deal-photo"><img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=500&q=85" alt="تنظيم الأدوات والكابلات" loading="lazy"></span><span class="deal-copy"><small>المنزل والتنظيم</small><strong>مشابك تنظيم الكابلات</strong><b>59–99 <small>ج.م</small></b><em>سعر بيع مستهدف</em></span></a>
+    </div>
+  </section>
   <section class="section" id="categories"><div class="section-head"><div><div class="kicker">اختار اللي يناسبك</div><h2>تسوّق حسب الفئة</h2><p>ابدأ من احتياجك، وهتلاقي الاختيارات المتعلقة بيه.</p></div><a class="text-link" href="#products">كل المنتجات ←</a></div><div class="categories"><button class="category-card" type="button" data-category="mobile"><span class="category-top"><span class="category-emoji">📱</span><span class="category-arrow">↙</span></span><span><strong>إكسسوارات الموبايل</strong><small>شحن، تثبيت وتنظيم</small></span></button><button class="category-card" type="button" data-category="home"><span class="category-top"><span class="category-emoji">🏡</span><span class="category-arrow">↙</span></span><span><strong>المنزل والتنظيم</strong><small>تفاصيل تساعدك ترتّب مساحتك</small></span></button><button class="category-card" type="button" data-category="daily"><span class="category-top"><span class="category-emoji">✨</span><span class="category-arrow">↙</span></span><span><strong>احتياجات يومية</strong><small>حلول بسيطة واستخدامات متنوعة</small></span></button></div></section>
   <section class="section catalog" id="products"><div class="section-head"><div><div class="kicker">منتجات مختارة</div><h2>تصفّح المنتجات</h2><p>دي قائمة مبدئية للدراسة. السعر النهائي والتوفر بيتأكدوا قبل الاتفاق.</p></div><a class="text-link" href="#howItWorks">إزاي بنختار؟ ←</a></div>
     <div class="catalog-tools"><div class="chips"><button class="chip active" data-filter="all" type="button">الكل</button><button class="chip" data-filter="mobile" type="button">إكسسوارات الموبايل</button><button class="chip" data-filter="home" type="button">المنزل والتنظيم</button><button class="chip" data-filter="daily" type="button">احتياجات يومية</button><button class="chip" id="favoritesFilter" type="button">♡ المفضلة فقط</button></div><div class="catalog-meta"><span id="resultsCount" aria-live="polite">8 اختيارات</span><label for="sortSelect">ترتيب:</label><select class="sort" id="sortSelect"><option value="featured">الاختيارات الحالية</option><option value="name">الاسم أبجديًا</option></select></div></div>

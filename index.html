@@ -594,6 +594,20 @@ footer{margin-top:50px;background:linear-gradient(130deg,#15213b,#223a5e);color:
 .side-product{border-radius:22px;transform:rotate(7deg)}
 @media(max-width:720px){.product-illustration{width:82px;height:82px;font-size:43px;border-radius:24px}.product-photo{max-height:155px}.detail-art.product-photo-wrap .product-photo{max-height:220px}}
 
+
+/* قسم مشاركة صور المنتجات */
+.share-images{padding:28px;background:#fff;border:1px solid var(--line);border-radius:22px;margin:8px 0 42px}
+.share-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.share-card{overflow:hidden;border:1px solid var(--line);border-radius:15px;background:#fff;min-width:0}
+.share-card img{display:block;width:100%;height:205px;object-fit:contain;background:#f5f7f4;padding:7px}
+.share-card-title{font-size:12px;line-height:1.7;font-weight:700;padding:11px 12px 5px}
+.share-card-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:8px 12px 12px}
+.share-card-actions button{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:9px;padding:9px 5px;font-size:10px;font-weight:700}
+.share-card-actions .share-wa{background:#168657;border-color:#168657;color:#fff}
+.share-all{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:20px;padding-top:17px;border-top:1px solid #edf0ec}
+.share-all span{font-size:10px;color:var(--muted)}
+@media(max-width:1000px){.share-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:720px){.share-images{padding:18px 13px;border-radius:17px}.share-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.share-card img{height:170px}.share-card-title{font-size:11px;padding:9px 9px 4px}.share-card-actions{padding:7px 9px 9px;gap:5px}.share-card-actions button{font-size:9px;padding:9px 3px}.share-all .primary{width:100%}.share-all span{line-height:1.8}}
 </style>
 </head>
 <body>
@@ -648,6 +662,11 @@ footer{margin-top:50px;background:linear-gradient(130deg,#15213b,#223a5e);color:
     <div class="catalog-tools"><div class="chips"><button class="chip active" data-filter="all" type="button">الكل</button><button class="chip" data-filter="mobile" type="button">إكسسوارات الموبايل</button><button class="chip" data-filter="home" type="button">المنزل والتنظيم</button><button class="chip" data-filter="daily" type="button">احتياجات يومية</button><button class="chip" data-filter="beauty" type="button">الجمال والعناية</button><button class="chip" id="favoritesFilter" type="button">♡ المفضلة فقط</button></div><div class="catalog-meta"><span id="resultsCount" aria-live="polite">11 اختيارات</span><label for="sortSelect">ترتيب:</label><select class="sort" id="sortSelect"><option value="featured">الاختيارات الحالية</option><option value="name">الاسم أبجديًا</option></select></div></div>
     <div class="product-grid" id="productGrid"></div>
   </section>
+  <section class="section share-images" id="shareImages" aria-labelledby="shareImagesTitle">
+    <div class="section-head"><div><div class="kicker">انشر الاختيارات اللي عجبتك</div><h2 id="shareImagesTitle">شارك صور المنتجات مع أصحابك</h2><p>اختار صورة وشارك رابطها على واتساب أو فيسبوك، أو انسخ رابط الصورة لإرسالها في أي مكان.</p></div></div>
+    <div class="share-gallery" id="shareGallery" aria-live="polite"></div>
+    <div class="share-all"><button type="button" class="primary" id="shareStore">📣 شارك متجر قريب منك</button><span>مشاركة بسيطة منك ممكن تعرّف ناس أكتر على المنتجات.</span></div>
+  </section>
   <section class="promo-row" id="howItWorks"><article class="promo"><h3>بنختار المنتج على أساس إيه؟</h3><p>الطلب الظاهر في السوق، سهولة التوصيل، جودة المنتج، وتكلفة الشراء الفعلية. مش كل منتج سعره منخفض يبقى فرصة مربحة.</p><a href="#marketResearch">اقرأ طريقة الاختيار ←</a><span class="promo-art" aria-hidden="true">⌕</span></article><article class="promo"><h3>عندك منتج نفسك تلاقيه؟</h3><p>ابعت اقتراحك، ونقدر نضيفه لقائمة المنتجات اللي محتاجة بحث ومقارنة أسعار.</p><a href="#" id="suggestProduct">اقترح منتجًا ←</a><span class="promo-art" aria-hidden="true">✳</span></article></section>
   <section class="trust" id="marketResearch"><div class="trust-head"><div class="kicker">الوضوح قبل البيع</div><h2>قرار الشراء لازم يكون على أرقام</h2><p>المنتجات المعروضة مرشّحة للدراسة وليست تأكيدًا بأنها الأعلى مبيعًا أو أنها متوفرة لدينا. قبل اعتماد أي منتج، نراجع السعر المحلي وتكلفة المورد والتوصيل والرسوم والمرتجعات.</p></div><div class="trust-grid"><div class="trust-item"><span aria-hidden="true">⌕</span><h3>مقارنة السوق</h3><p>راجع السعر والمنافسة على منصات البيع، وتحقق من مؤشرات الطلب الحديثة بدل الاعتماد على الانطباع فقط.</p></div><div class="trust-item"><span aria-hidden="true">↔</span><h3>تكلفة المورد كاملة</h3><p>سعر الجملة وحده لا يكفي؛ الشحن والرسوم والتغليف والتالف والمرتجعات قد تغيّر هامش الربح.</p></div><div class="trust-item"><span aria-hidden="true">✓</span><h3>لا وعود بأرباح مضمونة</h3><p>السعر الظاهر ١٩٩ جنيهًا سعر مستهدف مبدئي للتجربة وليس عرض بيع نهائيًا؛ يجب تأكيد سعر كل منتج وتوفره قبل الاتفاق.</p></div></div><div class="research-links"><a href="https://www.amazon.eg/" target="_blank" rel="noopener noreferrer">مقارنة أسعار Amazon Egypt ↗</a><a href="https://www.noon.com/egypt-en/" target="_blank" rel="noopener noreferrer">مقارنة أسعار Noon Egypt ↗</a><a href="https://www.alibaba.com/" target="_blank" rel="noopener noreferrer">بحث موردي الجملة على Alibaba ↗</a></div></section>
 </main>
@@ -694,9 +713,38 @@ function addInterest(id){var p=getProduct(id);if(!p)return;if(state.interests.in
 function removeInterest(id){state.interests=state.interests.filter(function(x){return x!==Number(id)});renderProducts();renderInterest()}
 function setCategory(category){state.category=category;state.favoritesOnly=false;renderProducts();$('#products').scrollIntoView({behavior:'smooth',block:'start'})}
 function submitSearch(value){state.query=(value||'').trim();$('#searchInput').value=state.query;$('#mobileSearchInput').value=state.query;state.favoritesOnly=false;renderProducts();$('#products').scrollIntoView({behavior:'smooth',block:'start'})}
+function renderShareGallery(){
+ var el=$('#shareGallery');if(!el)return;
+ el.innerHTML=products.slice(0,8).map(function(p){
+  var image=p.image||'';
+  var fallback='https://kokokerokoko2015-ux.github.io/qarib-mink/#products';
+  return '<article class="share-card"><img src="'+image+'" alt="صورة '+p.name+'" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display=\'none\'"><div class="share-card-title">'+p.name+'</div><div class="share-card-actions"><button type="button" class="share-wa" data-share-wa="'+p.id+'">واتساب ↗</button><button type="button" data-copy-image="'+p.id+'">نسخ رابط الصورة</button><button type="button" data-share-fb="'+p.id+'">فيسبوك ↗</button><button type="button" data-open-image="'+p.id+'">فتح الصورة</button></div></article>';
+ }).join('');
+}
+function shareProductImage(id,platform){
+ var p=getProduct(id);if(!p)return;
+ var image=p.image||'https://kokokerokoko2015-ux.github.io/qarib-mink/#products';
+ var caption='شوفوا المنتج ده من متجر قريب منك: '+p.name+'\nللاطلاع على المنتجات: https://kokokerokoko2015-ux.github.io/qarib-mink/';
+ if(platform==='wa'){window.open('https://wa.me/?text='+encodeURIComponent(caption+'\nصورة المنتج: '+image),'_blank','noopener,noreferrer');return}
+ if(platform==='fb'){window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://kokokerokoko2015-ux.github.io/qarib-mink/'),'_blank','noopener,noreferrer');return}
+ if(platform==='open'){window.open(image,'_blank','noopener,noreferrer');return}
+ if(platform==='copy'){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(image).then(function(){toast('تم نسخ رابط الصورة')}).catch(function(){window.prompt('انسخ رابط الصورة:',image)})}else{window.prompt('انسخ رابط الصورة:',image)}}
+}
 function sendWhatsApp(message){window.open('https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer')}
 function orderProduct(id){var p=getProduct(id);if(!p)return;var priceLine=p.priceVerified?'سعر البيع المقترح: '+p.priceTarget+' جنيه':'السعر: مطلوب تأكيد السعر الحالي';var message='مرحبًا، أريد الاستفسار عن المنتج من قريب منك:\n\nالمنتج: '+p.name+'\n'+priceLine+'\nالفئة: '+p.categoryName+'\n\nمن فضلك أكد السعر النهائي والتوفر وتكلفة الشحن ومدة التوصيل قبل تسجيل الطلب. هذه رسالة استفسار وليست عملية دفع أو طلبًا مؤكدًا.';sendWhatsApp(message)}
 function sendInterest(){var list=state.interests.map(getProduct).filter(Boolean);if(!list.length){toast('أضف منتجًا واحدًا على الأقل للقائمة');return}var message='مرحبًا، أريد الاستفسار عن المنتجات التالية من قريب منك:\n\n'+list.map(function(p,i){return(i+1)+'. '+p.name+' — '+('سعر بيع مقترح '+p.priceTarget+' جنيه (يحتاج اعتمادًا بعد حساب التكلفة)')+' ('+p.categoryName+')'}).join('\n')+'\n\nهل يمكن تأكيد السعر والتوفر وتكلفة التوصيل؟ هذه رسالة استفسار وليست طلب شراء.';sendWhatsApp(message)}
+$('#shareGallery').addEventListener('click',function(e){
+ var b=e.target.closest('[data-share-wa],[data-share-fb],[data-copy-image],[data-open-image]');if(!b)return;
+ if(b.hasAttribute('data-share-wa'))shareProductImage(b.dataset.shareWa,'wa');
+ else if(b.hasAttribute('data-share-fb'))shareProductImage(b.dataset.shareFb,'fb');
+ else if(b.hasAttribute('data-copy-image'))shareProductImage(b.dataset.copyImage,'copy');
+ else if(b.hasAttribute('data-open-image'))shareProductImage(b.dataset.openImage,'open');
+});
+$('#shareStore').addEventListener('click',function(){
+ var url='https://kokokerokoko2015-ux.github.io/qarib-mink/';
+ var message='اكتشفوا متجر قريب منك، اختيارات عملية للموبايل والبيت: '+url;
+ window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+});
 $('#desktopSearch').addEventListener('submit',function(e){e.preventDefault();submitSearch($('#searchInput').value)});
 $('#mobileSearch').addEventListener('submit',function(e){e.preventDefault();submitSearch($('#mobileSearchInput').value)});
 $$('[data-category]').forEach(function(b){b.addEventListener('click',function(){setCategory(b.dataset.category)})});
@@ -715,7 +763,7 @@ $('#footerInterest').addEventListener('click',function(e){e.preventDefault();ope
 $$('[data-close]').forEach(function(b){b.addEventListener('click',function(){closeOverlay(b.dataset.close)})});
 $$('.overlay').forEach(function(overlay){overlay.addEventListener('click',function(e){if(e.target===overlay)closeOverlay(overlay.id)})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')$$('.overlay.open').forEach(function(o){closeOverlay(o.id)})});
-$('#year').textContent=new Date().getFullYear();renderProducts();renderInterest();
+$('#year').textContent=new Date().getFullYear();renderProducts();renderInterest();renderShareGallery();
 })();
 </script>
 </body>
